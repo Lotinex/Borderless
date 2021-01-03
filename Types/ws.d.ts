@@ -1,19 +1,13 @@
 declare namespace WSC {
     type Server = {
-        'welcome': {
-            msg: string;
-        };
-        'error-roomId-exist': {};
-        'create-room-success': {};
+        'test-action': any;
     }
     type Client = {
-        'create-room': {
-            id: string;
-        }
+        'test-action': any;
     }
 }
 declare namespace WSClientClass {
-    type EventListener = {
+    type EventListener = { //required
         'message': (msg: {type: keyof WSC.Server} & WSC.Server[keyof WSC.Server]) => void;
         'ready': () => void;
     }
